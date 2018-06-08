@@ -28,4 +28,14 @@ Customer.prototype.getGenreValue = function(genre){
     }, 0)
 }
 
+Customer.prototype.sortRecordsByValue = function () {
+    return this.recordCollection.sort(function(recordA, recordB){
+        return recordB.price - recordA.price;
+    });
+}
+
+Customer.prototype.getMostValuableRecord = function(){
+    return this.sortRecordsByValue().slice(0,1);
+}
+
 module.exports = Customer;

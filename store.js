@@ -39,4 +39,14 @@ Store.prototype.getByGenre = function(genre){
     return recordsByGenre;
 }
 
+Store.prototype.compareCustomerCollections = function(cust1, cust2){
+    if (cust1.getCollectionValue() > cust2.getCollectionValue()){
+        return cust1;
+    } else if (cust1.getCollectionValue() < cust2.getCollectionValue()){
+        return cust2;
+    } else {
+        return "Both are equal";
+    }
+}
+
 module.exports = Store;
