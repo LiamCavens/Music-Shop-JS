@@ -42,4 +42,8 @@ describe("Record", function() {
     it("Should be able to show stor financial status", function(){
         assert.strictEqual(store.showFinancialStatus(), 522);
     });
+
+    it("Should be able to return records by genre", function(){
+        assert.deepStrictEqual(store.getByGenre("Indie"), [record2])
+    })
 })

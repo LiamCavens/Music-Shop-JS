@@ -28,4 +28,15 @@ Store.prototype.showFinancialStatus = function(){
     return financialBalance;
 }
 
+Store.prototype.getByGenre = function(genre){
+    let recordsByGenre = [];
+
+    this.inventory.forEach(function (record){
+        if(record.genre === genre){
+            recordsByGenre.push(record);
+        }
+    });
+    return recordsByGenre;
+}
+
 module.exports = Store;
